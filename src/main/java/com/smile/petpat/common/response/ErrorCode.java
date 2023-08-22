@@ -9,6 +9,7 @@ public enum ErrorCode {
 
     // USER
     ILLEGAL_USERNAME_DUPLICATION(HttpStatus.BAD_REQUEST,  "중복된 아이디입니다."),
+    ILLEGAL_NICKNAME_DUPLICATION(HttpStatus.BAD_REQUEST, "중복된 닉네임입니다."),
     ILLEGAL_USER_NOT_EXIST(HttpStatus.BAD_REQUEST, "가입되지 않은 아이디입니다."),
     ILLEGAL_PASSWORD_NOT_VALID (HttpStatus.BAD_REQUEST, "비밀번호가 일치하지 않습니다."),
     INVALID_PASSWORD_PATTERN(HttpStatus.BAD_REQUEST,  "비밀번호는 8자 이상 12자 이하의 길이의 영문자, 숫자, 특수문자(!@#$%^&*)만 사용 가능합니다."),
