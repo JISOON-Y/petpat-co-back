@@ -107,6 +107,8 @@ public class RegisterUserTest {
                 //when & then
                 Exception ex = assertThrows(CustomException.class,
                         ()->userService.registerUser(request.toCommand()));
+                assertEquals(ex.getMessage(),
+                        ErrorCode.ILLEGAL_NICKNAME_DUPLICATION.getMessage());
             }
         }
     }
