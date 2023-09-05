@@ -22,9 +22,9 @@ public class User implements UserDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "USER_ID")
     private Long id;
-    @Column(name = "USER_EMAIL")
+    @Column(name = "USER_EMAIL",unique = true)
     private String userEmail;
-    @Column(name = "NICKNAME")
+    @Column(name = "NICKNAME",unique = true)
     private String nickname;
     @Column(name = "PASSWORD")
     private String password;

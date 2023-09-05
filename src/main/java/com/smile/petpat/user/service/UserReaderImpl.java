@@ -40,6 +40,15 @@ public class UserReaderImpl implements UserReader {
     }
 
     @Override
+    public void getUserByNickName(String nickName) {
+        userRepository.findByNickname(nickName).ifPresent(
+                user -> {
+                    throw new CustomException(ILLEGAL_NICKNAME_DUPLICATION);
+                }
+        );
+    }
+
+    @Override
     public void getUser(User initUser) {
         isPwValid(initUser);
     }
