@@ -6,6 +6,7 @@ import com.smile.petpat.image.domain.ImageUploadManager;
 import com.smile.petpat.user.domain.User;
 import com.smile.petpat.user.domain.UserCommand;
 import com.smile.petpat.user.domain.UserModify;
+import com.smile.petpat.user.domain.UserReader;
 import com.smile.petpat.user.dto.UserDto;
 import com.smile.petpat.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -21,6 +22,7 @@ import javax.transaction.Transactional;
 public class UserModifyImpl implements UserModify {
 
     private final UserRepository userRepository;
+    private final UserReader userReader;
     private final ImageUploadManager imageUploadManager;
     private final PasswordEncoder passwordEncoder;
 
@@ -33,7 +35,7 @@ public class UserModifyImpl implements UserModify {
         User user = userRepository.findById(loginUser.getId()).orElseThrow(
                 ()->new CustomException(ErrorCode.ILLEGAL_USER_NOT_EXIST)
         );
-
+        userReader.getUserByNickName(request.getUsername());
         String filepath = imageUploadManager.saveProfileImage(request.getProfileImgFile(),
                 request.getProfileImgUrl());
 
