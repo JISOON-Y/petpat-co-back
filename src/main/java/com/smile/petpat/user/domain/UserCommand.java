@@ -30,7 +30,6 @@ public class UserCommand {
     }
 
     public UserCommand(UserDto.ModifyUserRequest request, String profileImgPath){
-        this.userEmail = request.getEmail();
         this.nickname = request.getUsername();
         this.profileImgPath = profileImgPath;
     }

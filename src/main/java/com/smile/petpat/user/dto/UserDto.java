@@ -63,9 +63,9 @@ public class UserDto {
 
     @Getter
     @Setter
+    @Builder
     public static class ModifyUserRequest{
         private String username;
-        private String email;
         private String profileImgUrl;
         private MultipartFile profileImgFile;
     }
