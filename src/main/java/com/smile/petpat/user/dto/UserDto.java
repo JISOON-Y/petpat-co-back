@@ -73,7 +73,10 @@ public class UserDto {
 
     @Getter
     @Setter
+    @Builder
     public static class ModifyPasswordRequest{
+        @Pattern(regexp = "^(?=.*[A-Za-z])(?=.*\\d)(?=.*[$@$!%*#?&])[A-Za-z\\d$@$!%*#?&]{8,12}$",
+                message = "비밀번호는 8자 이상 12자 이하의 길이의 영문자, 숫자, 특수문자(!@#$%^&*)만 사용 가능합니다.")
         private String newPassword;
         private String newPasswordChk;
     }
