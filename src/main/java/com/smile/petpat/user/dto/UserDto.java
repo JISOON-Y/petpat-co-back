@@ -2,6 +2,7 @@ package com.smile.petpat.user.dto;
 
 import com.smile.petpat.user.domain.UserCommand;
 import lombok.Builder;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.web.multipart.MultipartFile;
@@ -79,6 +80,7 @@ public class UserDto {
 
     @Getter
     @Setter
+    @Builder
     public static class CheckPasswordRequest{
         private String password;
     }

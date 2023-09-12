@@ -54,7 +54,7 @@ public class UserModifyImpl implements UserModify {
     public Boolean passwordCheck(String password, User user) {
         if(!passwordEncoder.matches(password, user.getPassword()))
             throw new CustomException(ErrorCode.ILLEGAL_PASSWORD_NOT_VALID);
-        return null;
+        return true;
     }
 
     /**
